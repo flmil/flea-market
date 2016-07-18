@@ -63,9 +63,10 @@ $(function() {
 			<li><a href="index.erb">HOME</a></li>
 			<li><a href="help.erb">取り込む</a></li>
 			<li><a href="help.erb">HELP</a></li>
+			<li><a href="ankert.erb">アンケート</a><li>
 		</ul>
 
-		<br>  
+		<br>
 
 
 		<table class="aaa">
@@ -116,17 +117,19 @@ $(function() {
 			 <textarea name="message" rows="10" cols="100" placeholder="ここに説明を書いてください"></textarea></p>
 			 <p>サイト:<input type="text" name="site"></p>
 
-
-			 </select>
-
-			 <select name="country">
-			 <option value="Japan" selected="selected">1番目の要素を選択して下さい</option>
-			 <option value="日本" class="japan"><name="janlus">日本</option>
-			 <option value="アメリカ" class="America"><name="janlus">アメリカ</option>
-			 <option value="オーストラリア" class="Australia"><name="janlus">オーストラリア</option>
-			 </select>
-
-
+			 <label>↓カデコリ選択↓</label><br>
+			 <label><input type="radio" name="janlus" value="電化製品">電化製品</label>
+			 <label><input type="radio" name="janlus" value="スポーツ">スポーツ</label>
+			 <label><input type="radio" name="janlus" value="ホビー">ホビー</label>
+			 <label><input type="radio" name="janlus" value="インテリア">インテリア</label>
+			 <label><input type="radio" name="janlus" value="メンズ">メンズ</label>
+			 <label><input type="radio" name="janlus" value="レディース">レディース</label><br>
+			 <label><input type="radio" name="janlus" value="ベビー・キッズ">ベビー・キッズ</label>
+			 <label><input type="radio" name="janlus" value="バック・小物">バッグ・小物</label>
+			 <label><input type="radio" name="janlus" value="ビューティー">ビューティー</label>
+			 <label><input type="radio" name="janlus" value="チケット">チケット</label>
+			 <label><input type="radio" name="janlus" value="ハンドメイド">ハンドメイド</label>>
+			 <label><input type="radio" name="janlus" value="その他" checked>その他</label>
 
 			 <p>カデコリ(詳細):<input type="text" name="categories"></p>
 			 <p><input type="submit" value="追加" name="commit" class="btn btn-primary"></input></p>
@@ -150,8 +153,8 @@ $(function() {
 							      <p>¥<%= bookmark.money %></p>
 							      <!--ここから-->
 
-							      <p>説明:<%= bookmark.message %></p><br>
-							      <p>サイト:<%= bookmark.site %></p><br>
+							      <p>説明:<%= bookmark.message %></p>
+							      <p>サイト:<%= bookmark.site %></p>
 							      <p>カデコリ:<%= bookmark.janlus %>⇨<%= bookmark.categories %></p>
 
 
