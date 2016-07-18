@@ -1,0 +1,191 @@
+@charset"UTF-8";
+
+*{
+    box-sizing: border-box;
+}
+
+/* リンクの色 */
+a{
+    color: #C2185B;
+}
+
+/* 追加ボタン */
+input[name="commit"]{
+    background: #4CAF50;
+    border: 0px solid #388E3C;
+}
+
+/* 追加ボタンにマウスカーソルを合わせたとき */
+input[name="commit"]:hover{
+    background: #388E3C;
+    
+    /* 変わる時間 */
+    transition: 0.3s;
+}
+
+/* 入力フォーム */
+#frm{
+    width: 100%;
+    
+    /* 場所を下にする */
+    bottom: 0;
+    
+    /* 余白 */
+    padding: 20px;
+    
+    /* 影の横(x)の位置 縦(y)の位置 ぼかし 幅 色 */
+    box-shadow: 0px -1px 1px 1px #e0e0e0;
+}
+
+/* ブックマーク共通 */
+.col-md-3{
+    height: 100%;
+    
+    /* 上の枠 */
+    border-top: 12px solid #FF5252;
+}
+
+/* 2の倍数のブックマーク */
+.col-md-3:nth-child(2n){
+    border-top: 12px solid #9C27B0;
+}
+
+/* 3の倍数のブックマーク */
+.col-md-3:nth-child(3n){
+    border-top: 12px solid #3F51B5;
+}
+
+/* 4の倍数のブックマーク */
+.col-md-3:nth-child(4n){
+    border-top: 12px solid #03A9F4;
+}
+
+/* 5の倍数のブックマーク */
+.col-md-3:nth-child(5n){
+    border-top: 12px solid #009688;
+}
+
+/* 6の倍数のブックマーク */
+.col-md-3:nth-child(6n){
+    border-top: 12px solid #8BC34A;
+}
+
+/* 7の倍数のブックマーク */
+.col-md-3:nth-child(7n){
+    border-top: 12px solid #FFC107;
+}
+
+
+.menu ul {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu li {
+    padding: 5px;
+}
+
+input[type="checkbox"].on-off + ul{
+    height: 0;
+    overflow: hidden;
+}
+
+input[type="checkbox"].on-off:checked + ul{
+    height: 100%;
+}
+
+
+
+
+
+
+/*body{
+  background-image:url("/assets/images/113.jpg");
+  background-repeat: no-repeat;            /* 背景を繰り返さない */
+  /*background-position: 50% 50%;            /* 背景画像の位置は画面中央 */
+ /* background-attachment:fixed;             /* 背景画像を固定する */
+/*}*/
+
+
+table,th{
+  width:100%;
+  height:1px;
+  vertical-align: top;
+  font-family: impact,sans-serif;
+  font-size: 100%;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 10px;   /*間隔*/
+  
+  
+  
+  /*この下完成時に削除*/
+  border: 2px #000000 solid;
+  /*background-color: #ff0000;*/
+}
+
+textarea{
+width:90%;
+height:30%;
+}
+
+wrap {
+  overflow : hidden ; 
+  
+}
+
+
+
+
+.a{
+  width: 70%
+}
+
+.b{
+   width: 30%
+}                                                  
+
+.aaa{
+  border-color: #ff66ff;
+  margin-bottom: 2em;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+#menu{
+  text-align: center;
+  width:1280px;/*メニューの横幅*/
+  padding:0;
+  margin:0;
+  list-style-type: none;/*枠線のスタイル(無し)*/
+
+}
+#menu li{
+  width:25%;/*リンク一つ一つの幅*/
+  float:left;/*回り込み(左)*/
+  padding:0;
+  margin:0;
+  text-align:center;/*テキストの位置*/
+}
+#menu li a{/*メニューのリンク*/
+  width:auto;
+  font-size:12px;/*フォントサイズ*/
+  font-weight:bold;/*フォントの太さ*/
+  padding:10px 0;
+  text-decoration:none;/*テキストのデコレーション*/
+  display:block;/*メニューを横に並べている何か*/
+  color:aqua;/*何もしていない時のメニューの色*/
+  background-color:transparent;/*背景の色(透明)*/
+    -webkit-transition: background-color 0.3s linear, color 0.3s linear, border-color 0.3s linear;/*メニューのカーソルが乗ってから色が変わるまでの時間*/
+}
+#menu li a:hover{/*メニューの上にカーソルが来た時*/
+  background-color: aqua;/*背景色*/
+  color: black;/*文字色*/
+  border-color: black;/*枠線の色*/
+}

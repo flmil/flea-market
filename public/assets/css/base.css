@@ -1,0 +1,61 @@
+@charset"UTF-8";
+
+body{
+	background-image:url("/public/assets/images/113.jpg");
+	background-repeat: no-repeat;            /* 背景を繰り返さない */
+  background-position: 50% 50%;            /* 背景画像の位置は画面中央 */
+  background-attachment:fixed;             /* 背景画像を固定する */
+}
+
+
+table,th{
+  width:100%;
+  height:1px;
+  vertical-align: top;
+  font-family: impact,sans-serif;
+  font-size: 100%;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 10px;   /*間隔*/
+  
+  
+  
+  /*この下完成時に削除*/
+  border: 2px #000000 solid;
+  /*background-color: #ff0000;*/
+}
+
+textarea{
+width:90%;
+height:30%;
+}
+
+wrap {
+  overflow : hidden ; 
+  
+}
+
+li{
+  
+}
+
+.iii{
+  width:90%;
+  height:30%;
+}
+
+.a{
+  width: 65%
+}
+
+.b{
+   width: 35%
+}                                                  
+
+.aaa{
+  border-color: #ff66ff;
+  margin-bottom: 2em;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
