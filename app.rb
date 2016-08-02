@@ -68,13 +68,12 @@ get '/form.erb' do
 end
 
 get '/search.erb' do
+  @search_title = Bookmark.first(2)
   erb :search
 end
 
 post '/title_search' do
-  puts "-------------------------------------------------"
-  p  s = params[:search]
-  puts "-------------------------------------------------"
-  p @search_title = Bookmark.where(" title like '%#{s}%' ")
+  s = params[:search]
+  @search_title = Bookmark.where(" title like '%#{s}%' ")
   erb :search
 end
