@@ -1,8 +1,8 @@
 @charset"UTF-8";
 
 body{
-	background-image:url("/public/assets/images/113.jpg");
-	background-repeat: no-repeat;            /* 背景を繰り返さない */
+  background-image:url("/public/assets/images/113.jpg");
+  background-repeat: no-repeat;            /* 背景を繰り返さない */
   background-position: 50% 50%;            /* 背景画像の位置は画面中央 */
   background-attachment:fixed;             /* 背景画像を固定する */
 }
@@ -17,26 +17,26 @@ table,th{
   text-align: center;
   border-collapse: separate;
   border-spacing: 10px;   /*間隔*/
-  
-  
-  
+
+
+
   /*この下完成時に削除*/
   border: 2px #000000 solid;
   /*background-color: #ff0000;*/
 }
 
 textarea{
-width:90%;
-height:30%;
+  width:90%;
+  height:30%;
 }
 
 wrap {
   overflow : hidden ; 
-  
+
 }
 
 li{
-  
+
 }
 
 .iii{
@@ -49,7 +49,7 @@ li{
 }
 
 .b{
-   width: 35%
+  width: 35%
 }                                                  
 
 .aaa{

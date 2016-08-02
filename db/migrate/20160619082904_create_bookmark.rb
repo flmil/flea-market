@@ -8,7 +8,7 @@ class CreateBookmark < ActiveRecord::Migration
       t.string :site
       t.string :janlus
       t.string :categories
-      t.timestamps nu11: false
+      t.timestamps null: false
     end
   end
 end
