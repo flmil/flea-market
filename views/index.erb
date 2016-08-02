@@ -1,205 +1,205 @@
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
-		<meta charset="UTF-8">
-		<title>ネットフリーマーケット</title>
-		<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/assets/css/bookmark.css">
-		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+  <head>
+    <meta charset="UTF-8">
+    <title>ネットフリーマーケット</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bookmark.css">
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 
 
 
-		<!-- jQueryをCDNを使って読み込む -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script type="text/javascript">
-//この中にドロップダウンリストを連動させるための
-//jQueryのコードを記述していきます。
+    <!-- jQueryをCDNを使って読み込む -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    //この中にドロップダウンリストを連動させるための
+    //jQueryのコードを記述していきます。
 
-$(function() {
+    $(function() {
 
-	// カデコリが変更されたら発動
-	$('select[name="country"]').change(function() {
+      // カデコリが変更されたら発動
+      $('select[name="country"]').change(function() {
 
-		// 選択されている国のクラス名を取得
-		var countyName = $('select[name="country"] option:selected').attr("class");
-		console.log(countyName);
+        // 選択されている国のクラス名を取得
+        var countyName = $('select[name="country"] option:selected').attr("class");
+        console.log(countyName);
 
-		// カデコリの要素数を取得
-		var count = $('select[name="city"]').children().length;
+        // カデコリの要素数を取得
+        var count = $('select[name="city"]').children().length;
 
-		// カデコリの要素数分、for文で回す
-		for (var i=0; i<count; i++) {
+        // カデコリの要素数分、for文で回す
+        for (var i=0; i<count; i++) {
 
-			var city = $('select[name="city"] option:eq(' + i + ')');
+          var city = $('select[name="city"] option:eq(' + i + ')');
 
-					if(city.attr("class") === countyName) {
-						// 選択したカデコリと同じクラス名だった場合
+          if(city.attr("class") === countyName) {
+            // 選択したカデコリと同じクラス名だった場合
 
-						city.show();
-					}else {
-						// 選択したカデコリとクラス名が違った場合
+            city.show();
+          }else {
+            // 選択したカデコリとクラス名が違った場合
 
-						if(city.attr("class") === "msg") {
-							// 「カデコリを選択して下さい」という要素だった場合
+            if(city.attr("class") === "msg") {
+              // 「カデコリを選択して下さい」という要素だった場合
 
-							city.show();  //「都市名を選択して下さい」を表示させる
-							city.prop('selected',true);  //「カデコリを選択して下さい」を強制的に選択されている状態にする
-						} else {
-							// 「カデコリを選択して下さい」という要素でなかった場合
+              city.show();  //「都市名を選択して下さい」を表示させる
+              city.prop('selected',true);  //「カデコリを選択して下さい」を強制的に選択されている状態にする
+            } else {
+              // 「カデコリを選択して下さい」という要素でなかった場合
 
-							city.hide();
-						}
-					}
-					}
-	})
-})
-		</script>
+              city.hide();
+            }
+          }
+        }
+      })
+    })
+    </script>
 
-	</head>
-	<body>
-		<ul id="menu">
-		<li><a href="top.erb">TOP</a></li>
-		<li><a href="index.erb">HOME</a></li>
-		<li><a href="search.erb">取り込む</a></li>
-		<li><a href="help.erb">HELP</a></li>
-		<li><a href="form.erb">アンケート</a></li>
-		</ul>
+  </head>
+  <body>
+    <ul id="menu">
+      <li><a href="top.erb">TOP</a></li>
+      <li><a href="index.erb">HOME</a></li>
+      <li><a href="search.erb">取り込む</a></li>
+      <li><a href="help.erb">HELP</a></li>
+      <li><a href="form.erb">アンケート</a></li>
+    </ul>
 
-		<br>
-
-
-		<table class="aaa">
-
-			<tr>
-				<th class="a">
-					<table>
-						<!--tr>
-
-	      <div class="page-header__nav__item">
-	      <form class="search-form ng-pristine ng-valid" action="//rakuma.rakuten.co.jp/search/">
-	      <input class="search-form__input" type="text" name="keyword" value="" placeholder="ラクマ内から探す">
-	      <button class="search-form__btn" type="submit">検索</button>
-	      </form>
-	      </div>
+    <br>
 
 
-	      <form action="https://www.mercari.com/jp/search/" class="global-header-form">
-	      <input type="search" name="keyword" value="" placeholder="キーワードから探す" class="global-header-search input-default">
-	      <i class="icon-search"></i>
-	      </form>
+    <table class="aaa">
 
-	      </tr-->
-	      <tr>
+      <tr>
+        <th class="a">
+          <table>
+            <!--tr>
 
-
-
-
-		      <!-- 折り畳み展開ポインタ -->
-		      <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
-			      <a style="cursor:pointer;">▼ クリックで投稿画面を表示</a>
-		      </div>
-		      <!--// 折り畳み展開ポインタ -->
-
-		      <!-- 折り畳まれ部分 -->
-		      <div id="open" style="display:none;clear:both;">
+              <div class="page-header__nav__item">
+              <form class="search-form ng-pristine ng-valid" action="//rakuma.rakuten.co.jp/search/">
+              <input class="search-form__input" type="text" name="keyword" value="" placeholder="ラクマ内から探す">
+              <button class="search-form__btn" type="submit">検索</button>
+              </form>
+              </div>
 
 
+              <form action="https://www.mercari.com/jp/search/" class="global-header-form">
+              <input type="search" name="keyword" value="" placeholder="キーワードから探す" class="global-header-search input-default">
+              <i class="icon-search"></i>
+              </form>
 
-			      <!--ここの部分が折りたたまれる＆展開される部分になります。
-		 自由に記述してください。-->
-		 <form action="/reate"method="post" id="frm" class="pull-left">
-			 <p><ladel for="url">U R L:</ladel>
-			 <input type="url" name="url" id="url"></p>
-			 <p><ladel for="title">タイトル:</ladel>
-			 <input type="title" name="title" id="title" ></p>
-			 <p>金額:<input type="number" name="money"></p>
-			 <textarea name="message" rows="10" cols="100" placeholder="ここに説明を書いてください"></textarea></p>
-			 <!--p>サイト:<input type="text" name="site"></p-->
-
-			 <label>↓サイト↓</label><br>
-			 <label><input type="radio" name="site" value="ラクマ">ラクマ</label>
-			 <label><input type="radio" name="site" value="メルカリ">メルカリ</label>
-			 <label><input type="radio" name="site" value="チケットキャンプ">チケットキャンプ</label>
-			 <label><input type="radio" name="site" value="その他" checked>その他</label>
-
-			 <br>
-
-			 <label>↓カデコリ選択↓</label><br>
-			 <label><input type="radio" name="janlus" value="電化製品">電化製品</label>
-			 <label><input type="radio" name="janlus" value="スポーツ">スポーツ</label>
-			 <label><input type="radio" name="janlus" value="ホビー">ホビー</label>
-			 <label><input type="radio" name="janlus" value="インテリア">インテリア</label>
-			 <label><input type="radio" name="janlus" value="メンズ">メンズ</label>
-			 <label><input type="radio" name="janlus" value="レディース">レディース</label><br>
-			 <label><input type="radio" name="janlus" value="ベビー・キッズ">ベビー・キッズ</label>
-			 <label><input type="radio" name="janlus" value="バック・小物">バッグ・小物</label>
-			 <label><input type="radio" name="janlus" value="ビューティー">ビューティー</label>
-			 <label><input type="radio" name="janlus" value="チケット">チケット</label>
-			 <label><input type="radio" name="janlus" value="ハンドメイド">ハンドメイド</label>>
-			 <label><input type="radio" name="janlus" value="その他" checked>その他</label>
-
-			 <p>カデコリ(詳細):<input type="text" name="categories"></p>
-			 <p><input type="submit" value="追加" name="commit" class="btn btn-primary"></input></p>
-		 </form>
-
-		      </div>
-		      <!--// 折り畳まれ部分 -->
+              </tr-->
+              <tr>
 
 
 
 
-	      </tr>
-	      <tr>
-		      <th>
-			      <div class="container-fluid">
-				      <div class="row">
-					      <% @bookmarks.order('id DESC').each do |bookmark|%>
-						      <div class="col-md-3">
-							      <img width="100%" height="100%" src="https://mozshot.nemui.org/shot/large?<%= bookmark.url %>" alt="" />
-							      <p><a href="<%= bookmark.url %>"><%= bookmark.title%></a></p>
-							      <p>¥<%= bookmark.money %></p>
-							      <!--ここから-->
+                <!-- 折り畳み展開ポインタ -->
+                <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+                  <a style="cursor:pointer;">▼ クリックで投稿画面を表示</a>
+                </div>
+                <!--// 折り畳み展開ポインタ -->
 
-							      <p>説明:<%= bookmark.message %></p>
-							      <p>サイト:<%= bookmark.site %></p>
-							      <p>カデコリ:<%= bookmark.janlus %>⇨<%= bookmark.categories %></p>
-
-
-							      <!--// 折り畳まれ部分 -->
+                <!-- 折り畳まれ部分 -->
+                <div id="open" style="display:none;clear:both;">
 
 
 
-							      <!--ここまで--> 
-							      <span sytle="z-index: 10000;">
-								      <form action="/delete/<%= bookmark.id %>" method="post">
-									      <input type="submit" value="削除">
-								      </form>
-							      </span>
+                  <!--ここの部分が折りたたまれる＆展開される部分になります。
+                    自由に記述してください。-->
+                    <form action="/reate"method="post" id="frm" class="pull-left">
+                      <p><ladel for="url">U R L:</ladel>
+                      <input type="url" name="url" id="url"></p>
+                      <p><ladel for="title">タイトル:</ladel>
+                      <input type="title" name="title" id="title" ></p>
+                      <p>金額:<input type="number" name="money"></p>
+                      <textarea name="message" rows="10" cols="100" placeholder="ここに説明を書いてください"></textarea></p>
+                      <!--p>サイト:<input type="text" name="site"></p-->
 
-						      </div>
-					      <% end %>
-				      </div>
-			      </div>
+                      <label>↓サイト↓</label><br>
+                      <label><input type="radio" name="site" value="ラクマ">ラクマ</label>
+                      <label><input type="radio" name="site" value="メルカリ">メルカリ</label>
+                      <label><input type="radio" name="site" value="チケットキャンプ">チケットキャンプ</label>
+                      <label><input type="radio" name="site" value="その他" checked>その他</label>
 
-			      <!--script>
-$('#url').change(function(){
-	$.get("/api/site", { url: $(this).val()},
-			function(data){
-				$('#title').val(data.title);
-			});
-})
-			      </script-->
-		      </th>
-	      </tr>
-					</table>
-				</th>
-				<th class="b">
-					flmil
-				</th>
+                      <br>
 
-				</tr>
-		</table>
-	</body>
+                      <label>↓カデコリ選択↓</label><br>
+                      <label><input type="radio" name="janlus" value="電化製品">電化製品</label>
+                      <label><input type="radio" name="janlus" value="スポーツ">スポーツ</label>
+                      <label><input type="radio" name="janlus" value="ホビー">ホビー</label>
+                      <label><input type="radio" name="janlus" value="インテリア">インテリア</label>
+                      <label><input type="radio" name="janlus" value="メンズ">メンズ</label>
+                      <label><input type="radio" name="janlus" value="レディース">レディース</label><br>
+                      <label><input type="radio" name="janlus" value="ベビー・キッズ">ベビー・キッズ</label>
+                      <label><input type="radio" name="janlus" value="バック・小物">バッグ・小物</label>
+                      <label><input type="radio" name="janlus" value="ビューティー">ビューティー</label>
+                      <label><input type="radio" name="janlus" value="チケット">チケット</label>
+                      <label><input type="radio" name="janlus" value="ハンドメイド">ハンドメイド</label>>
+                      <label><input type="radio" name="janlus" value="その他" checked>その他</label>
+
+                      <p>カデコリ(詳細):<input type="text" name="categories"></p>
+                      <p><input type="submit" value="追加" name="commit" class="btn btn-primary"></input></p>
+                    </form>
+
+                </div>
+                <!--// 折り畳まれ部分 -->
+
+
+
+
+              </tr>
+              <tr>
+                <th>
+                  <div class="container-fluid">
+                    <div class="row">
+                      <% @bookmarks.order('id DESC').each do |bookmark|%>
+                        <div class="col-md-3">
+                          <img width="100%" height="100%" src="https://mozshot.nemui.org/shot/large?<%= bookmark.url %>" alt="" />
+                          <p><a href="<%= bookmark.url %>"><%= bookmark.title%></a></p>
+                          <p>¥<%= bookmark.money %></p>
+                          <!--ここから-->
+
+                          <p>説明:<%= bookmark.message %></p>
+                          <p>サイト:<%= bookmark.site %></p>
+                          <p>カデコリ:<%= bookmark.janlus %>⇨<%= bookmark.categories %></p>
+
+
+                          <!--// 折り畳まれ部分 -->
+
+
+
+                          <!--ここまで--> 
+                          <span sytle="z-index: 10000;">
+                            <form action="/delete/<%= bookmark.id %>" method="post">
+                              <input type="submit" value="削除">
+                            </form>
+                          </span>
+
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+
+                  <!--script>
+                    $('#url').change(function(){
+                    $.get("/api/site", { url: $(this).val()},
+                    function(data){
+                    $('#title').val(data.title);
+                    });
+                    })
+                    </script-->
+                </th>
+              </tr>
+          </table>
+        </th>
+        <th class="b">
+          flmil
+        </th>
+
+        </tr>
+    </table>
+  </body>
 </html>
 
 
