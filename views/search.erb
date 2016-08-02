@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/bookmark.css">
+		<title>取り込み</title>
+	</head>
+	<body>
+		<ul id="menu">
+			<li><a href="top.erb">TOP</a></li>
+			<li><a href="index.erb">HOME</a></li>
+			<li><a href="search.erb">取り込む</a></li>
+			<li><a href="help.erb">HELP</a></li>
+			<li><a href="form.erb">アンケート</a></li>
+		</ul>
+		<br>
+		<table class="aaa">
+			<tr>
+				<th class="a">
+					<form method="post" action="/title_search">
+						検索:<input type="text" name="search">
+						<input type="submit" value="検索">
+					</form>
+					<% @bookmarks.order('id search_title').each do |bookmark|%>
+						<img width="100%" height="100%" src="https://mozshot.nemui.org/shot/large?<%= bookmark.url %>" alt="" />
+						<p><a href="<%= bookmark.url %>"><%= bookmark.title%></a></p>
+						<p>¥<%= bookmark.money %></p>
+						<!--ここから-->
+
+						<p>説明:<%= bookmark.message %></p>
+						<p>サイト:<%= bookmark.site %></p>
+						<p>カデコリ:<%= bookmark.janlus %>⇨<%= bookmark.categories %></p>
+
+
+						<!--// 折り畳まれ部分 -->
+
+
+
+						<!--ここまで-->
+				</th>
+				<th class="b">flmil
+				</th>
+			</tr>
+		</table>
+	</body>
+</html>
+

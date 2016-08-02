@@ -57,13 +57,12 @@ $(function() {
 
 	</head>
 	<body>
-
 		<ul id="menu">
-			<li><a href="top.erb">TOP</a></li>
-			<li><a href="index.erb">HOME</a></li>
-			<li><a href="help.erb">取り込む</a></li>
-			<li><a href="help.erb">HELP</a></li>
-			<li><a href="ankert.erb">アンケート</a><li>
+		<li><a href="top.erb">TOP</a></li>
+		<li><a href="index.erb">HOME</a></li>
+		<li><a href="search.erb">取り込む</a></li>
+		<li><a href="help.erb">HELP</a></li>
+		<li><a href="form.erb">アンケート</a></li>
 		</ul>
 
 		<br>
@@ -115,7 +114,15 @@ $(function() {
 			 <input type="title" name="title" id="title" ></p>
 			 <p>金額:<input type="number" name="money"></p>
 			 <textarea name="message" rows="10" cols="100" placeholder="ここに説明を書いてください"></textarea></p>
-			 <p>サイト:<input type="text" name="site"></p>
+			 <!--p>サイト:<input type="text" name="site"></p-->
+
+			 <label>↓サイト↓</label><br>
+			 <label><input type="radio" name="site" value="ラクマ">ラクマ</label>
+			 <label><input type="radio" name="site" value="メルカリ">メルカリ</label>
+			 <label><input type="radio" name="site" value="チケットキャンプ">チケットキャンプ</label>
+			 <label><input type="radio" name="site" value="その他" checked>その他</label>
+
+			 <br>
 
 			 <label>↓カデコリ選択↓</label><br>
 			 <label><input type="radio" name="janlus" value="電化製品">電化製品</label>
@@ -148,7 +155,7 @@ $(function() {
 				      <div class="row">
 					      <% @bookmarks.order('id DESC').each do |bookmark|%>
 						      <div class="col-md-3">
-							      <img width="100%" height="100%" src="http://mozshot.nemui.org/shot/large?<%= bookmark.url %>" alt="" />
+							      <img width="100%" height="100%" src="https://mozshot.nemui.org/shot/large?<%= bookmark.url %>" alt="" />
 							      <p><a href="<%= bookmark.url %>"><%= bookmark.title%></a></p>
 							      <p>¥<%= bookmark.money %></p>
 							      <!--ここから-->
@@ -174,14 +181,14 @@ $(function() {
 				      </div>
 			      </div>
 
-			      <script>
+			      <!--script>
 $('#url').change(function(){
 	$.get("/api/site", { url: $(this).val()},
 			function(data){
 				$('#title').val(data.title);
 			});
 })
-			      </script>
+			      </script-->
 		      </th>
 	      </tr>
 					</table>

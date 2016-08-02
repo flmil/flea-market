@@ -85,6 +85,7 @@ input[name="commit"]:hover{
     margin: 0;
     padding: 0;
     list-style: none;
+    margin:0;
 }
 
 .menu li {
@@ -105,12 +106,13 @@ input[type="checkbox"].on-off:checked + ul{
 
 
 
-/*body{
-  background-image:url("/assets/images/113.jpg");
+body{
+  /*background-image:url("/assets/images/113.jpg");*/
   background-repeat: no-repeat;            /* 背景を繰り返さない */
-  /*background-position: 50% 50%;            /* 背景画像の位置は画面中央 */
- /* background-attachment:fixed;             /* 背景画像を固定する */
-/*}*/
+  background-position: 50% 50%;            /* 背景画像の位置は画面中央 */
+  background-attachment:fixed;             /* 背景画像を固定する */
+  margin:0;
+}
 
 
 table,th{
@@ -121,7 +123,7 @@ table,th{
   font-size: 100%;
   text-align: center;
   border-collapse: separate;
-  border-spacing: 10px;   /*間隔*/
+  border-spacing: 3px;   /*間隔*/
   
   
   
@@ -160,6 +162,7 @@ wrap {
 
 #menu{
   text-align: center;
+  vertical-align: top;
   width:100%;/*メニューの横幅*/
   padding:0;
   margin:0;

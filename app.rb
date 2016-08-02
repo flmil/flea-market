@@ -52,5 +52,29 @@ post '/delete/:unko' do
 end
 
 get '/index.erb' do
-  erb :index
+   redirect '/'
+end
+
+get '/top.erb' do
+	erb :top
+end
+
+get '/help.erb' do
+	erb :help
+end
+
+get '/form.erb' do
+	erb :form
+end
+
+get '/search.erb' do
+	erb :search
+end
+
+post '/title_search' do
+	puts "-------------------------------------------------"
+	p  s = params[:search]
+	puts "-------------------------------------------------"
+	p @search_title = Bookmark.where(" title like '%#{s}%' ")
+	erb :search
 end
